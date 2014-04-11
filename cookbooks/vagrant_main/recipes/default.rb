@@ -62,6 +62,16 @@ apache_site "default" do
   enable false
 end
 
+# Setup Display Errors
+template "#{node['php']['ext_conf_dir']}/display_errors.ini" do
+  source "display_errors.ini.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :restart, resources("service[apache2]"), :delayed
+end
+
 # Install phpmyadmin
 cookbook_file "/tmp/phpmyadmin.deb.conf" do
   source "phpmyadmin.deb.conf"
