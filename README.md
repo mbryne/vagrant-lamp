@@ -31,7 +31,6 @@ Installed software:
 * php
 * phpMyAdmin
 * Xdebug with Webgrind
-* zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * git, subversion
 * mc, vim, screen, tmux, curl
 * [MailCatcher](http://mailcatcher.me/)
@@ -46,13 +45,6 @@ Installed software:
     * [n98-magerun](https://github.com/netz98/n98-magerun)
     * [modman](https://github.com/colinmollenhour/modman)
     * [modgit](https://github.com/jreinke/modgit)
-* Node.js with following packages:
-    * [CoffeeScript](http://coffeescript.org)
-    * [Grunt](http://gruntjs.com/)
-    * [Bower](http://bower.io)
-    * [Yeoman](http://yeoman.io)
-    * [LESS](http://lesscss.org)
-    * [CSS Lint](http://csslint.net)
 
 Notes
 -----

@@ -46,6 +46,5 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "vagrant_main::wordpress"
     chef.add_recipe "vagrant_main::drupal"
     chef.add_recipe "vagrant_main::magento"
-    chef.add_recipe "vagrant_main::nodejs"
   end
 end
