@@ -3,7 +3,8 @@
 
 Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
+  # options are documented and commented below. For a complete reference,require "../../Downloads/gem_uninstall_r-master/gem_uninstall_r"
+  
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
@@ -31,20 +32,22 @@ Vagrant.configure("2") do |config|
   # These expose provider-specific options.
   config.vm.provider :virtualbox do |vb|
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "512"]
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
+  config.berkshelf.enabled = true
+  config.omnibus.chef_version = :latest
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
-    chef.data_bags_path = "data_bags"
-
+    chef.custom_config_path = "Vagrantfile.chef" 
+    chef.data_bags_path = "data_bags"    
+    
     # List of recipes to run
-    chef.add_recipe "vagrant_main"
-    chef.add_recipe "vagrant_main::wordpress"
-    chef.add_recipe "vagrant_main::drupal"
-    chef.add_recipe "vagrant_main::magento"
+    chef.add_recipe "vagrant-lamp"
+    chef.add_recipe "vagrant-lamp::wordpress"
+    chef.add_recipe "vagrant-lamp::drupal"
+        
   end
 end

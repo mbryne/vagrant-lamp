@@ -1,0 +1,16 @@
+name             "vagrant-lamp"
+maintainer       "mbryne"
+maintainer_email "mbryne@gmail.com"
+license          "All rights reserved"
+description      "Installs/Configures vagrant-lamp"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          "0.0.1"
+
+depends          "apt"
+depends          "apache2"
+depends          "git"
+depends          "mysql"
+depends          "php"
+depends          "database"
+depends          "composer"
+depends          "phing"
