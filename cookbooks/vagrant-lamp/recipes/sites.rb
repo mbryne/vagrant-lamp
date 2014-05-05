@@ -16,7 +16,7 @@ sites.each do |name|
     server_name site["host"]
     server_aliases site["aliases"]
     server_include site["include"]
-    docroot site["docroot"]?site["docroot"]:"/vagrant/public/#{site["host"]}/www"
+    docroot site["docroot"]?site["docroot"]:"/vagrant/sites/#{site["host"]}/www"
   end
   
   # create database
