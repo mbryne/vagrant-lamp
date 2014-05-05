@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
 
   # Set share folder permissions to 777 so that apache can write files
   config.vm.synced_folder ".", "/vagrant", mount_options: ['dmode=777','fmode=666']
-
+   
   # Provider-specific configuration so you can fine-tune VirtualBox for Vagrant.
   # These expose provider-specific options.
   config.vm.provider :virtualbox do |vb|
@@ -48,6 +48,8 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "vagrant-lamp"
     chef.add_recipe "vagrant-lamp::wordpress"
     chef.add_recipe "vagrant-lamp::drupal"
+    chef.add_recipe "vagrant-lamp::sites"
         
   end
+  
 end
