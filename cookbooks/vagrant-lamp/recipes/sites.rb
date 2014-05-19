@@ -30,7 +30,7 @@ sites.each do |name|
     connection ({:host => 'localhost', :username => 'root', :password => node['mysql']['server_root_password']})
     password site["id"]
     database_name site["id"]
-    privileges [:select,:update,:insert,:create,:delete,:"create temporary tables",:drop,:index,:alter]
+    privileges [:select,:update,:insert,:create,:delete,:"create temporary tables",:drop,:index,:alter,:"lock tables"]
     action :grant
   end
   
