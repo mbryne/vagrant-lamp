@@ -10,7 +10,7 @@ end
 sites.each do |name|
   site = data_bag_item("sites", name)
   siteroot = "/sites/#{site["host"]}"
-  webroot = site["webroot"] ? site["webroot"] : siteroot + "/web"
+  webroot = site["webroot"] ? site["webroot"] : siteroot + "/www"
   
   # create site root
   directory siteroot do
