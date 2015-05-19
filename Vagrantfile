@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
 
   # Either NFS or default virtual box additions
   if Vagrant::Util::Platform.windows?
-    config.vm.synced_folder "../sites", "/vagrant", mount_options: ['dmode=777','fmode=666']
+    config.vm.synced_folder "../sites", "/sites", mount_options: ['dmode=777','fmode=666']
   else 
-    config.vm.synced_folder "../sites", "/vagrant", type: "nfs", :mount_options => ['actimeo=2']  
+    config.vm.synced_folder "../sites", "/sites", type: "nfs", :mount_options => ['actimeo=2']  
   end
    
   config.vm.provider :virtualbox do |vb|
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     # List of recipes to run
     chef.add_recipe "vagrant-lamp"
     chef.add_recipe "vagrant-lamp::wordpress"
-    chef.add_recipe "vagrant-lamp::nodejs"
+    chef.add_recipe "vagrant-lamp::node"
     chef.add_recipe "vagrant-lamp::sites"
         
   end

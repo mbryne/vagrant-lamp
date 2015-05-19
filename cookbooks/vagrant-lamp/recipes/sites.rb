@@ -9,7 +9,7 @@ end
 # Configure sites
 sites.each do |name|
   site = data_bag_item("sites", name)
-  siteroot = "/vagrant/sites/#{site["host"]}"
+  siteroot = "/sites/#{site["host"]}"
   webroot = site["webroot"] ? site["webroot"] : siteroot + "/web"
   
   # create site root

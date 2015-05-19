@@ -1,5 +1,6 @@
 include_recipe "apt"
 include_recipe "git"
+include_recipe "build-essential"
 include_recipe "apache2"
 include_recipe "apache2::mod_rewrite"
 include_recipe "apache2::mod_ssl"
@@ -12,7 +13,7 @@ include_recipe "php::module_curl"
 include_recipe "apache2::mod_php5"
 include_recipe "database::mysql"
 include_recipe "composer"
-#include_recipe "phing"
+include_recipe "nodejs"
 
 # Required packages
 %w{ debconf vim subversion curl make g++ }.each do |a_package|
