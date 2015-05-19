@@ -10,6 +10,7 @@ cookbook "composer"
 cookbook "phing"
 cookbook "database"
 cookbook "phpmyadmin"
+cookbook "nodejs"
 
 # custom cookbooks
 cookbook "vagrant-lamp",  path: "cookbooks/vagrant-lamp"

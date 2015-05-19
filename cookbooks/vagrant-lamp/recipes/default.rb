@@ -12,7 +12,7 @@ include_recipe "php::module_curl"
 include_recipe "apache2::mod_php5"
 include_recipe "database::mysql"
 include_recipe "composer"
-include_recipe "phing"
+#include_recipe "phing"
 
 # Required packages
 %w{ debconf vim subversion curl make g++ }.each do |a_package|
@@ -69,14 +69,14 @@ cookbook_file "/etc/phpmyadmin/config-db.php" do
 end
 
 # Install Xdebug
-php_pear "xdebug" do
-  action :install
-end
-template "#{node['php']['ext_conf_dir']}/xdebug.ini" do
-  source "xdebug.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  action :create
-  notifies :restart, resources("service[apache2]"), :delayed
-end
+#php_pear "xdebug" do
+#  action :install
+#end
+#template "#{node['php']['ext_conf_dir']}/xdebug.ini" do
+#  source "xdebug.ini.erb"
+#  owner "root"
+#  group "root"
+#  mode "0644"
+#  action :create
+#  notifies :restart, resources("service[apache2]"), :delayed
+#end

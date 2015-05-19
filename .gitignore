@@ -1,4 +1,7 @@
+cookbooks/vagrant-lamp/files/default/id_rsa
+cookbooks/vagrant-lamp/files/default/id_rsa.pub
+/sites
+!/sites/local.dev
 .vagrant
-
-/data_bags/sites/*
-sites/*.dev
+backups
+sites
