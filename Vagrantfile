@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     # List of recipes to run
     chef.add_recipe "vagrant-lamp"
     chef.add_recipe "vagrant-lamp::wordpress"
-    chef.add_recipe "vagrant-lamp::node"
+    chef.add_recipe "vagrant-lamp::nodejs"
     chef.add_recipe "vagrant-lamp::sites"
         
   end
