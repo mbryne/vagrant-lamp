@@ -1,5 +1,5 @@
 include_recipe "apt"
-include_recipe "git"
+#include_recipe "git"
 include_recipe "build-essential"
 include_recipe "apache2"
 include_recipe "apache2::mod_rewrite"
@@ -15,9 +15,25 @@ include_recipe "database::mysql"
 include_recipe "composer"
 include_recipe "nodejs"
 
+# # Mysql
+# mysql_service 'default' do
+#   version '5.5'
+#   port '3306'
+#   action :create
+# end
+
 # Required packages
-%w{ debconf vim subversion curl make g++ }.each do |a_package|
+%w{ git debconf vim subversion curl make g++ }.each do |a_package|
   package a_package
+end
+
+# Configure Apache 2.4
+cookbook_file "/etc/apache2/mods-available/mpm_event.load" do
+  source "mpm_event.load"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
 end
 
 # Generate selfsigned ssl

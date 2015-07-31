@@ -1,0 +1,2 @@
+#LoadModule mpm_event_module /usr/lib/apache2/modules/mod_mpm_event.so
+LoadModule mpm_prefork_module /usr/lib/apache2/modules/mod_mpm_prefork.so
